@@ -1,3 +1,10 @@
+EXTRA_CFLAGS += -I$(srctree)/$(src)/include
+EXTRA_CFLAGS += -I$(srctree)/$(src)/hal/phydm
+EXTRA_CFLAGS += -I$(srctree)/$(src)/core/crypto
+EXTRA_CFLAGS += -I$(srctree)/$(src)/platform
+EXTRA_CFLAGS += -I$(srctree)/$(src)/os_dep
+EXTRA_CFLAGS += -I$(srctree)/$(src)/core
+
 EXTRA_CFLAGS += $(USER_EXTRA_CFLAGS)
 EXTRA_CFLAGS += -O1
 #EXTRA_CFLAGS += -O3
@@ -8,7 +15,7 @@ EXTRA_CFLAGS += -O1
 #EXTRA_CFLAGS += -Wshadow -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes
 
 EXTRA_CFLAGS += -Wno-unused-variable
-#EXTRA_CFLAGS += -Wno-unused-value
+EXTRA_CFLAGS += -Wno-unused-value -Wno-incompatible-pointer-types
 #EXTRA_CFLAGS += -Wno-unused-label
 #EXTRA_CFLAGS += -Wno-unused-parameter
 EXTRA_CFLAGS += -Wno-unused-function
